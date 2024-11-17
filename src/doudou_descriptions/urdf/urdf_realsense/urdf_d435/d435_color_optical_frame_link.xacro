@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<robot name="realsense_d435" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="d435_color_optical_frame_link" params="prefix">
+
+        <link name="${prefix}/d435_color_optical_frame_link"/>
+
+        <joint name="${prefix}/d435_color_optical_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+            <parent link="${prefix}/d435_color_frame_link" />
+            <child link="${prefix}/d435_color_optical_frame_link" />
+        </joint>
+      
+    </xacro:macro>
+
+</robot>

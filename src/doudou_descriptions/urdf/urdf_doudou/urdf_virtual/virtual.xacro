@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<robot name="virtual_link" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_virtual/virtual_link.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_virtual/virtual_joint.xacro" />
+
+</robot>

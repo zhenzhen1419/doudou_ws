@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="frame_connector_T" params="frame_postfix link_xyz link_rpy joint_xyz joint_rpy  parent_link">
+
+        <link name="frame_connector_T_${frame_postfix}_link">
+            <visual>
+                <origin xyz="${link_xyz}" rpy="${link_rpy}" />
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/connector_meshes/connector_T.dae" />
+                </geometry>
+                <material name="silver">
+                    <color rgba="0.75 0.75 0.75 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="${link_xyz}" rpy="${link_rpy}" />
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/connector_meshes/connector_T.dae" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="0.0765" />
+                <inertia ixx="0.0000486" iyy="0.0000163" izz="0.000372" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+
+        <joint name="frame_connector_T_${frame_postfix}_joint" type="fixed">
+            <origin xyz="${joint_xyz}" rpy="${joint_rpy}" />
+            <parent link="${parent_link}" />
+            <child link="frame_connector_T_${frame_postfix}_link" />
+        </joint>
+
+    </xacro:macro>
+
+</robot>

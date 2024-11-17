@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot name="tracer" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <link name="tracer/base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="package://doudou_description/meshes/tracer_meshes/tracer_base_link_no_wheel.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="package://doudou_description/meshes/tracer_meshes/tracer_base_link_no_wheel.dae" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="tracer/inertial_link">
+        <inertial>
+            <mass value="132.3898489950015" />
+            <origin xyz="0.015 0.0231316650320557 0" />
+            <inertia ixx="0.185196122711036" ixy="4.30144213829512E-08" ixz="5.81037523686401E-08" iyy="0.364893736238929" iyz="-0.000386720198091934" izz="0.223868521722778" />
+        </inertial>
+    </link>
+
+    <joint name="tracer/inertial_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="tracer/base_link" />
+        <child link="tracer/inertial_link" />
+    </joint>
+
+</robot>

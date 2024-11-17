@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<robot name="tracer" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="fr_castor" params="wheel_prefix *joint_pose">
+        <link name="tracer/${wheel_prefix}_link">
+            <visual>
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/tracer_meshes/castor_joint.dae" />
+                </geometry>
+            </visual>
+            <inertial>
+                <mass value="1" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.1361" iyz="0" izz="0.7171" />
+            </inertial>
+        </link>
+
+        <joint name="tracer/${wheel_prefix}_wheel" type="continuous">
+            <origin xyz="${track/2} ${-wheelbase/2} ${castor_offset-0.0680886}" rpy="-1.57 0 0" />
+            <parent link="tracer/base_link" />
+            <child link="tracer/fr_castor_link" />
+            <axis xyz="0 1 0" rpy="0 0 0" />
+        </joint>
+
+    </xacro:macro>
+
+</robot>

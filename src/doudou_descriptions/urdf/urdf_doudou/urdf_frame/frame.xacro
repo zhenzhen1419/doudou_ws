@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_300mm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_400mm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_500mm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_800mm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_connector_L.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame_connector_T.xacro" />
+
+    <!--To mount the middle realsense d435 named middle-->
+    <xacro:frame_300mm frame_postfix="1" link_xyz="${tube_radius} 0 0.1" link_rpy="0 0 0" joint_xyz="${thickness} 0 0" joint_rpy="0 0 0" parent_link="frame_connector_T_5_link" />
+   
+    <!--To secure two 800mm brackets numbered 7 and 8 -->
+    <xacro:frame_300mm frame_postfix="2" link_xyz="-0.13  ${tube_radius} 0" link_rpy="0 -${pi/2} 0" joint_xyz="0  ${thickness} 0" joint_rpy="0 0 0" parent_link="frame_connector_L_18_link" />
+    <xacro:frame_300mm frame_postfix="3" link_xyz="-0.13 -${tube_radius} 0" link_rpy="0 -${pi/2} 0" joint_xyz="0 -${thickness} 0" joint_rpy="0 0 0" parent_link="frame_connector_L_21_link" />
+    
+    <!--To mount two demostrators-->
+    <xacro:frame_300mm frame_postfix="4" link_xyz="0  0.13 -${tube_radius}" link_rpy="${pi/2} 0 0" joint_xyz="0  ${2 * tube_radius} 0" joint_rpy="0 0 0" parent_link="frame_connector_L_25_link" />
+    <xacro:frame_300mm frame_postfix="5" link_xyz="0 -0.13 -${tube_radius}" link_rpy="${pi/2} 0 0" joint_xyz="0 -${2 * tube_radius} 0" joint_rpy="0 0 0" parent_link="frame_connector_L_26_link" />
+
+    <!--To secure two 400mm brackets numbered 1 and 2-->
+    <xacro:frame_300mm frame_postfix="6" link_xyz="${tube_radius} 0 0" link_rpy="${pi/2} 0 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_9_link" />
+
+    <!--To mount two demostrators-->
+    <xacro:frame_400mm frame_postfix="1" link_xyz="-0.08 -${tube_radius} 0" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0.114" joint_rpy="0 ${pi/4} 0" parent_link="frame_connector_L_23_link" />
+    <xacro:frame_400mm frame_postfix="2" link_xyz="-0.08  ${tube_radius} 0" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0.114" joint_rpy="0 ${pi/4} 0" parent_link="frame_connector_L_24_link" />
+
+    <!--To mount on the tracer-->
+    <xacro:frame_500mm frame_postfix="1" link_xyz="0 0 ${tube_radius}" link_rpy="${pi/2} 0 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_1_link" />
+    <xacro:frame_500mm frame_postfix="2" link_xyz="0 0 ${tube_radius}" link_rpy="${pi/2} 0 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_2_link" />
+   
+    <!--To mount robotic arm named wx250s_left-->
+    <xacro:frame_500mm frame_postfix="3" link_xyz="0.14 0 ${tube_radius}" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_5_link" />
+    <xacro:frame_500mm frame_postfix="4" link_xyz="0.14 0 ${tube_radius}" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_6_link" />
+    
+    <!--To mount robotic arm named wx250s_right-->
+    <xacro:frame_500mm frame_postfix="5" link_xyz="0.14 0 ${tube_radius}" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_7_link" />
+    <xacro:frame_500mm frame_postfix="6" link_xyz="0.14 0 ${tube_radius}" link_rpy="0 ${pi/2} 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_8_link" />
+
+    <!--To mount Four upright brackets-->
+    <xacro:frame_800mm frame_postfix="1" link_xyz="-${tube_radius} 0 ${0.4 - tube_radius}" link_rpy="0 0 0" joint_xyz="0 0 ${2*tube_radius}" joint_rpy="0 0 0" parent_link="frame_connector_T_1_link" />
+    <xacro:frame_800mm frame_postfix="2" link_xyz="-${tube_radius} 0 ${0.4 - tube_radius}" link_rpy="0 0 0" joint_xyz="0 0 ${2*tube_radius}" joint_rpy="0 0 0" parent_link="frame_connector_T_2_link" />
+    <xacro:frame_800mm frame_postfix="3" link_xyz="-${tube_radius} 0 ${0.4 - tube_radius}" link_rpy="0 0 0" joint_xyz="0 0 ${2*tube_radius}" joint_rpy="0 0 0" parent_link="frame_connector_T_3_link" />
+    <xacro:frame_800mm frame_postfix="4" link_xyz="-${tube_radius} 0 ${0.4 - tube_radius}" link_rpy="0 0 0" joint_xyz="0 0 ${2*tube_radius}" joint_rpy="0 0 0" parent_link="frame_connector_T_4_link" />
+    
+    <!--To mount two robotic arms named wx250s_left and wx250s_right-->
+    <xacro:frame_800mm frame_postfix="5" link_xyz="${tube_radius} 0 0" link_rpy="${pi/2} 0 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_3_link" />
+    <xacro:frame_800mm frame_postfix="6" link_xyz="${tube_radius} 0 0" link_rpy="${pi/2} 0 0" joint_xyz="0 0 0" joint_rpy="0 0 0" parent_link="virtual_4_link" />
+    
+    <!--To mount the two demostrators-->
+    <xacro:frame_800mm frame_postfix="7" link_xyz="0 -${tube_radius} 0.14" link_rpy="0 0 0" joint_xyz="0 -${thickness} 0" joint_rpy="0 -${pi/4} 0" parent_link="frame_connector_L_19_link" />
+    <xacro:frame_800mm frame_postfix="8" link_xyz="0  ${tube_radius} 0.14" link_rpy="0 0 0" joint_xyz="0  ${thickness} 0" joint_rpy="0 -${pi/4} 0" parent_link="frame_connector_L_22_link" />
+   
+    <!--To secure two 500mm brackets numbered 1 and 2-->
+    <xacro:frame_connector_L frame_postfix="1" link_xyz="${tube_radius} -${tube_radius} 0" link_rpy="0 0 ${pi/2}" joint_xyz="${tracer_rail_length/2 - tube_radius}  ${tracer_rail_width/2}  0.016" joint_rpy="0 0 0" parent_link="tracer/base_link" />
+    <xacro:frame_connector_L frame_postfix="2" link_xyz="${tube_radius}  ${tube_radius} 0" link_rpy="0 0 ${pi}"   joint_xyz="${tracer_rail_length/2 - tube_radius} -${tracer_rail_width/2} 0.016"  joint_rpy="0 0 0" parent_link="tracer/base_link" />
+    <xacro:frame_connector_L frame_postfix="3" link_xyz="${tube_radius} -${tube_radius} 0" link_rpy="0 0 ${pi/2}" joint_xyz="0                                      ${tracer_rail_width/2}  0.016" joint_rpy="0 0 0" parent_link="tracer/base_link" />
+    <xacro:frame_connector_L frame_postfix="4" link_xyz="${tube_radius}  ${tube_radius} 0" link_rpy="0 0 ${pi}"   joint_xyz="0                                     -${tracer_rail_width/2} 0.016"  joint_rpy="0 0 0" parent_link="tracer/base_link" />
+
+    <!--To secure the 800mm brackets-->
+    <xacro:frame_connector_L frame_postfix="5" link_xyz="0            -${tube_radius} 0.058" link_rpy="0 ${pi/2} 0"     joint_xyz="0 0 0.722" joint_rpy="0 0 0" parent_link="frame_800mm_1_link" />
+    <xacro:frame_connector_L frame_postfix="6" link_xyz="${thickness} ${tube_radius}  0.058" link_rpy="0 ${pi/2} ${pi}" joint_xyz="0 0 0.722" joint_rpy="0 0 0" parent_link="frame_800mm_2_link" />
+    <xacro:frame_connector_L frame_postfix="7" link_xyz="0            -${tube_radius} 0.058" link_rpy="0 ${pi/2} 0"     joint_xyz="0 0 0.722" joint_rpy="0 0 0" parent_link="frame_800mm_3_link" />
+    <xacro:frame_connector_L frame_postfix="8" link_xyz="${thickness} ${tube_radius}  0.058" link_rpy="0 ${pi/2} ${pi}" joint_xyz="0 0 0.722" joint_rpy="0 0 0" parent_link="frame_800mm_4_link" />
+    
+    <!--TO mount wx250s_left robotic arm-->
+    <xacro:frame_connector_L frame_postfix="9"  link_xyz="-${tube_radius} ${tube_radius} 0" link_rpy="0 0 -${pi/2}" joint_xyz="${tube_radius} ${0.4 - tube_radius}        ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_5_link" />
+    <xacro:frame_connector_L frame_postfix="10" link_xyz="-${tube_radius} ${tube_radius} 0" link_rpy="0 0 -${pi/2}" joint_xyz="${tube_radius} ${0.4 - tube_radius - 0.15} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_5_link" />
+    <xacro:frame_connector_L frame_postfix="13" link_xyz="-${tube_radius} ${tube_radius} 0" link_rpy="0 0 -${pi/2}" joint_xyz="${tube_radius} ${0.4 - tube_radius}        ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_6_link" />
+    <xacro:frame_connector_L frame_postfix="14" link_xyz="-${tube_radius} ${tube_radius} 0" link_rpy="0 0 -${pi/2}" joint_xyz="${tube_radius} ${0.4 - tube_radius - 0.15} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_6_link" />
+    
+    <!--To mount wx250s_right robotic arm-->
+    <xacro:frame_connector_L frame_postfix="11" link_xyz="-${tube_radius} -${tube_radius} 0" link_rpy="0 0 0" joint_xyz="${tube_radius} -${0.4 - tube_radius}        ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_5_link" />
+    <xacro:frame_connector_L frame_postfix="12" link_xyz="-${tube_radius} -${tube_radius} 0" link_rpy="0 0 0" joint_xyz="${tube_radius} -${0.4 - tube_radius - 0.15} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_5_link" />
+    <xacro:frame_connector_L frame_postfix="15" link_xyz="-${tube_radius} -${tube_radius} 0" link_rpy="0 0 0" joint_xyz="${tube_radius} -${0.4 - tube_radius}        ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_6_link" />
+    <xacro:frame_connector_L frame_postfix="16" link_xyz="-${tube_radius} -${tube_radius} 0" link_rpy="0 0 0" joint_xyz="${tube_radius} -${0.4 - tube_radius - 0.15} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_800mm_6_link" />
+    
+    <!--TO mount 800mm bracket numbered 7-->
+    <xacro:frame_connector_L frame_postfix="17" link_xyz="${tube_radius} ${thickness} ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-${tube_radius} ${tube_radius} 0.1172" joint_rpy="0 0 0" parent_link="frame_800mm_3_link" />
+    <xacro:frame_connector_L frame_postfix="18" link_xyz="${tube_radius} ${thickness} ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-${tube_radius} ${tube_radius} 0.2534" joint_rpy="0 0 0" parent_link="frame_800mm_3_link" />
+    <xacro:frame_connector_L frame_postfix="19" link_xyz="0.098          0            ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-0.216          0              0"      joint_rpy="0 0 0" parent_link="frame_300mm_2_link" />
+    
+    <!--To mount 800mm bracket umbered 8-->
+    <xacro:frame_connector_L frame_postfix="20" link_xyz="${tube_radius} 0            ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-${tube_radius} -${tube_radius} 0.1172" joint_rpy="0 0 0" parent_link="frame_800mm_4_link" />
+    <xacro:frame_connector_L frame_postfix="21" link_xyz="${tube_radius} 0            ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-${tube_radius} -${tube_radius} 0.2534" joint_rpy="0 0 0" parent_link="frame_800mm_4_link" />
+    <xacro:frame_connector_L frame_postfix="22" link_xyz="0.098          ${thickness} ${tube_radius}" link_rpy="-${pi/2} 0 ${pi}" joint_xyz="-0.216           0              0"      joint_rpy="0 0 0" parent_link="frame_300mm_3_link" />
+    
+    <!--To mount 800mm brackets numbered 7 and 8-->
+    <xacro:frame_connector_L frame_postfix="23" link_xyz="0.085 ${thickness} 0.055" link_rpy="-${pi/2} -${pi/4} ${pi}" joint_xyz="0 0 0.5" joint_rpy="0 0 0" parent_link="frame_800mm_7_link" />
+    <xacro:frame_connector_L frame_postfix="24" link_xyz="0.085 0            0.055" link_rpy="-${pi/2} -${pi/4} ${pi}" joint_xyz="0 0 0.5" joint_rpy="0 0 0" parent_link="frame_800mm_8_link" />
+    
+    <!--To mount two demostrators-->
+    <xacro:frame_connector_L frame_postfix="25" link_xyz="-0.018 -${tube_radius} 0" link_rpy="0 0  0"       joint_xyz="-0.15 -${tube_radius} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_400mm_1_link" />
+    <xacro:frame_connector_L frame_postfix="26" link_xyz="-0.018  ${tube_radius} 0" link_rpy="0 0 -${pi/2}" joint_xyz="-0.15  ${tube_radius} ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_400mm_2_link" />
+
+    <!--To mount four 800mm brackets numbered 1,2,3,4-->
+    <xacro:frame_connector_T frame_postfix="1" link_xyz="${thickness} 0 -${tube_radius}" link_rpy="0 -${pi/2} 0" joint_xyz="${tube_radius}  ${tracer_rail_width/2}  ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_500mm_1_link" />
+    <xacro:frame_connector_T frame_postfix="2" link_xyz="${thickness} 0 -${tube_radius}" link_rpy="0 -${pi/2} 0" joint_xyz="${tube_radius} -${tracer_rail_width/2}  ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_500mm_1_link" />
+    <xacro:frame_connector_T frame_postfix="3" link_xyz="${thickness} 0 -${tube_radius}" link_rpy="0 -${pi/2} 0" joint_xyz="${tube_radius}  ${tracer_rail_width/2}  ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_500mm_2_link" />
+    <xacro:frame_connector_T frame_postfix="4" link_xyz="${thickness} 0 -${tube_radius}" link_rpy="0 -${pi/2} 0" joint_xyz="${tube_radius} -${tracer_rail_width/2}  ${tube_radius}" joint_rpy="0 0 0" parent_link="frame_500mm_2_link" />
+    
+    <!--To mount realsense d435 named middle-->
+    <xacro:frame_connector_T frame_postfix="5" link_xyz="${thickness} 0 -${tube_radius}" link_rpy="0 -${pi/2} 0" joint_xyz="${2 * tube_radius} 0 0" joint_rpy="0 0 0" parent_link="frame_800mm_6_link" />
+
+</robot>

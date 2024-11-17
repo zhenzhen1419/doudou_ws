@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<robot name="tracer" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/tracer_base_link.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/tracer_wheel_1.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/tracer_wheel_2.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/fl_castor.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/fr_castor.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/rl_castor.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/rr_castor.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/fl_wheel.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/fr_wheel.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/rl_wheel.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/rr_wheel.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/tracer.gazebo.xacro" />
+
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+
+    <!-- Vehicle Geometries -->
+    <xacro:property name="base_x_size" value="0.6200000" />
+    <xacro:property name="base_y_size" value="0.585000" />
+    <xacro:property name="base_z_size" value="0.235000" />
+    
+    <xacro:property name="wheelbase" value="0.34"/>
+    <xacro:property name="track" value="0.37910" />
+    
+    <xacro:property name="castor_length" value="0.002"/>
+    <xacro:property name="castor_radius" value="0.03724" />
+
+    <xacro:property name="wheel_vertical_offset" value="-0.082" />
+    <xacro:property name="castor_offset" value="0.03" />
+    
+    <xacro:property name="wheel_length" value="0.8e-01" />
+    <xacro:property name="wheel_radius" value="1.600e-01" />
+
+    <xacro:tracer_wheel_1 wheel_prefix="left">
+        <origin xyz="0 ${wheelbase/2} ${wheel_vertical_offset}" rpy="3.14 0 0" />
+    </xacro:tracer_wheel_1>
+    <xacro:tracer_wheel_2 wheel_prefix="right">
+        <origin xyz="0 ${-wheelbase/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+    </xacro:tracer_wheel_2>
+
+    <xacro:fl_castor wheel_prefix="fl_castor">
+        <origin xyz="${track/2} ${wheelbase/2} ${castor_offset-0.0528886}" rpy="-1.57 0 0" />
+    </xacro:fl_castor>
+    <xacro:fr_castor wheel_prefix="fr_castor">
+        <origin xyz="${track/2} ${-wheelbase/2} ${castor_offset-0.0528886}" rpy="-1.57 0 0" />
+    </xacro:fr_castor>
+    <xacro:rl_castor wheel_prefix="rl_castor">
+        <origin xyz="${-track/2} ${wheelbase/2} ${castor_offset-0.0528886}" rpy="-1.57 0 0" />
+    </xacro:rl_castor>
+    <xacro:rr_castor wheel_prefix="rr_castor">
+        <origin xyz="${-track/2} ${-wheelbase/2} ${castor_offset-0.0528886}" rpy="-1.57 0 0" />
+    </xacro:rr_castor>
+
+    <xacro:fl_wheel wheel_prefix="fl">
+        <origin xyz="-0.0218084 ${-wheel_vertical_offset-0.0150} 0" rpy="0 0 0" />
+    </xacro:fl_wheel>
+    <xacro:fr_wheel wheel_prefix="fr">
+        <origin xyz="-0.0218084 ${-wheel_vertical_offset-0.0150} 0" rpy="0 0 0" />
+    </xacro:fr_wheel>
+    <xacro:rl_wheel wheel_prefix="rl">
+        <origin xyz="-0.0218084 ${-wheel_vertical_offset-0.0150} 0" rpy="0 0 0" />
+    </xacro:rl_wheel>
+    <xacro:rr_wheel wheel_prefix="rr">
+        <origin xyz="-0.0218084 ${-wheel_vertical_offset-0.0150} 0" rpy="0 0 0" />
+    </xacro:rr_wheel>
+
+</robot>

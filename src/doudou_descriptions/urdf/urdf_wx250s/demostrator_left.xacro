@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<robot name="demostrator_left" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name="pi_offset" value="0.00001"/>
+
+    <!--<material name="interbotix_black">
+        <texture filename="package://doudou_description/meshes/wx250s_meshes/interbotix_black.png" />
+    </material>-->
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_dummy.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_base.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_shoulder.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_upper_arm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_upper_forearm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_lower_forearm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_wrist.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_arm/arm_gripper.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_gripper/gripper_prop.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_gripper/gripper_left_finger.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_gripper/gripper_right_finger.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_extras/ar_tag.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_extras/ee_arm.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_extras/ee_gripper.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_extras/fingers.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/urdf_extras/gripper_bar.xacro" />
+    
+    <xacro:arm_dummy            arm_prefix="demostrator_left"></xacro:arm_dummy>
+    <xacro:arm_base             arm_prefix="demostrator_left"></xacro:arm_base>
+    <xacro:arm_shoulder         arm_prefix="demostrator_left"></xacro:arm_shoulder>
+    <xacro:arm_upper_arm        arm_prefix="demostrator_left"></xacro:arm_upper_arm>
+    <xacro:arm_upper_forearm    arm_prefix="demostrator_left"></xacro:arm_upper_forearm>
+    <xacro:arm_lower_forearm    arm_prefix="demostrator_left"></xacro:arm_lower_forearm>
+    <xacro:arm_wrist            arm_prefix="demostrator_left"></xacro:arm_wrist>
+    <xacro:arm_gripper          arm_prefix="demostrator_left"></xacro:arm_gripper>
+    <xacro:gripper_prop         arm_prefix="demostrator_left"></xacro:gripper_prop>
+    <xacro:gripper_left_finger  arm_prefix="demostrator_left"></xacro:gripper_left_finger>
+    <xacro:gripper_right_finger arm_prefix="demostrator_left"></xacro:gripper_right_finger>
+    <xacro:ar_tag               arm_prefix="demostrator_left"></xacro:ar_tag>
+    <xacro:ee_arm               arm_prefix="demostrator_left"></xacro:ee_arm>
+    <xacro:ee_gripper           arm_prefix="demostrator_left"></xacro:ee_gripper>
+    <xacro:fingers              arm_prefix="demostrator_left"></xacro:fingers>
+    <xacro:gripper_bar          arm_prefix="demostrator_left"></xacro:gripper_bar>
+
+</robot>

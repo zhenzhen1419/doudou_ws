@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot name="tracer" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Virtual motor of the wheel of the Tracer -->
+    <xacro:macro name="tracer_wheel_transmission" params="wheel_prefix">
+        <transmission name="tracer/${wheel_prefix}_wheel_trans" type="SimpleTransmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="tracer/${wheel_prefix}_wheel_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="tracer/${wheel_prefix}_wheel">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+    </xacro:macro>
+
+    <!-- Actuator configurations -->
+    <xacro:tracer_wheel_transmission wheel_prefix="left" />
+    <xacro:tracer_wheel_transmission wheel_prefix="right" />
+    <xacro:tracer_wheel_transmission wheel_prefix="fl" />
+    <xacro:tracer_wheel_transmission wheel_prefix="fr" />
+    <xacro:tracer_wheel_transmission wheel_prefix="rl" />
+    <xacro:tracer_wheel_transmission wheel_prefix="rr" />
+    <xacro:tracer_wheel_transmission wheel_prefix="fl_castor" />
+    <xacro:tracer_wheel_transmission wheel_prefix="fr_castor" />
+    <xacro:tracer_wheel_transmission wheel_prefix="rr_castor" />
+    <xacro:tracer_wheel_transmission wheel_prefix="rl_castor" />
+
+    <!-- Controller configurations -->
+    <!--<gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/doudou</robotNamespace>
+        </plugin>
+    </gazebo>-->
+
+
+</robot>

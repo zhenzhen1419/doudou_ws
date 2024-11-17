@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+     <!--Set the wx250s base to blue-->
+     <gazebo reference="wx250s_left/base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!--Set the wx250s shoulder to blue-->
+    <gazebo reference="wx250s_left/shoulder_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <!--Set the wx250s upper_arm to red-->
+    <gazebo reference="wx250s_left/upper_arm_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <!--Set the wx250s upper_forearm to green-->
+    <gazebo reference="wx250s_left/upper_forearm_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <!--Set the wx250s lower_forearm to purple-->
+    <gazebo reference="wx250s_left/lower_forearm_link">
+        <material>Gazebo/Purple</material>
+    </gazebo>
+
+    <!--Set the wx250s wrist to orange-->
+    <gazebo reference="wx250s_left/wrist_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <!--Set the wx250s gripper to red-->
+    <gazebo reference="wx250s_left/gripper_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <!--Set the wx250s ar_tag to green-->
+    <gazebo reference="wx250s_left/ar_tag_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <!--Set the wx250s gripper_prop to purple-->
+    <gazebo reference="wx250s_left/gripper_prop_link">
+        <material>Gazebo/Purple</material>
+    </gazebo>
+
+    <!--Set the wx250s gripper_bar to blue-->
+    <gazebo reference="wx250s_left/gripper_bar_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!--Set the wx250s left_finger to black-->
+    <gazebo reference="wx250s_left/left_finger_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!--Set the wx250s right_finger to black-->
+    <gazebo reference="wx250s_left/right_finger_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+</robot>

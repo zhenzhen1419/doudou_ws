@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<robot name="wx250s" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="ee_arm" params="arm_prefix">
+
+        <link name="${arm_prefix}/ee_arm_link">
+            <inertial>
+                <mass value="0.001" />
+                <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+        
+        <joint name="${arm_prefix}/ee_arm_joint" type="fixed">
+            <axis xyz="1 0 0"/>
+            <origin xyz="0.043 0 0" rpy="0 0 0" />
+            <parent link="${arm_prefix}/gripper_link"/>
+            <child link="${arm_prefix}/ee_arm_link"/>
+        </joint>
+
+    </xacro:macro>
+
+</robot>

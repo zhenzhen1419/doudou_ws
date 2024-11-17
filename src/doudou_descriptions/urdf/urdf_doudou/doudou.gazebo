@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/wx250s_left.gazebo" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/wx250s_right.gazebo" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/demostrator_left.gazebo" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/demostrator_right.gazebo" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame.gazebo" />
+
+    <!-- ros_control plugin -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/doudou</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+</robot>

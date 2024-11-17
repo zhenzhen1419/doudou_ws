@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!--Set the 300mm 4040 aluminum tube to blue-->
+    <gazebo reference="frame_300mm_1_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="frame_300mm_2_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="frame_300mm_3_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="frame_300mm_4_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="frame_300mm_5_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="frame_300mm_6_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!--Set the 400mm 4040 aluminum tube to green-->
+    <gazebo reference="frame_400mm_1_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="frame_400mm_2_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <!--Set the 500mm 4040 aluminum tube to yellow-->
+    <gazebo reference="frame_500mm_1_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="frame_500mm_2_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="frame_500mm_3_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="frame_500mm_4_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="frame_500mm_5_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="frame_500mm_6_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <!--Set the 800mm 4040 aluminum tube to red-->
+    <gazebo reference="frame_800mm_1_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_2_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_3_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_4_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_5_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_6_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_7_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="frame_800mm_8_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot name="realsense_d435" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="d435_cam_link" params="prefix">
+
+        <link name="${prefix}/d435_cam_link">
+            <visual>
+                <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${M_PI/2} 0 ${M_PI/2}"/>
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/realsense_meshes/d435.dae" />
+                </geometry>
+                <material name="aluminum">
+                    <color rgba="0.5 0.5 0.5 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="0.072" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="5.235e-05" ixy="0.0" ixz="0.0" iyy="7.515e-06" iyz="0.0" izz="5.237e-05" />
+            </inertial>
+        </link>
+
+        <joint name="${prefix}/d435_cam_joint" type="fixed">
+            <origin xyz="0 ${d435_cam_depth_py} ${d435_cam_depth_pz}" rpy="0 0 0"/>
+            <parent link="${prefix}/d435_bottom_screw_frame_link"/>
+            <child link="${prefix}/d435_cam_link" />
+        </joint>
+
+    </xacro:macro>
+
+</robot>

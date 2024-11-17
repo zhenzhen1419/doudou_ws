@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="frame_500mm" params="frame_postfix link_xyz link_rpy joint_xyz joint_rpy  parent_link">
+
+        <link name="frame_500mm_${frame_postfix}_link">
+            <visual>
+                <origin xyz="${link_xyz}" rpy="${link_rpy}" />
+                <geometry>
+                    <box size="0.04 0.04 0.5"/>
+                </geometry>
+                <material name="yellow">
+                    <color rgba="1 1 0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="${link_xyz}" rpy="${link_rpy}" />
+                <geometry>
+                    <box size="0.04 0.04 0.5"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="0.4104" />
+                <inertia ixx="0.00860" iyy="0.00860" izz="0.00022" ixy="0" ixz="0" iyz="0" />
+            </inertial>
+        </link>
+
+        <joint name="frame_500mm_${frame_postfix}_joint" type="fixed">
+            <origin xyz="${joint_xyz}" rpy="${joint_rpy}" />
+            <parent link="${parent_link}" />
+            <child link="frame_500mm_${frame_postfix}_link" />
+        </joint>
+
+    </xacro:macro>
+
+</robot>

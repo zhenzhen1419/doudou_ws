@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<robot name="virtual_link" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!--To mount two 500mm brackets numbered 1 and 2-->
+    <joint name="frame_connector_L_1_link_to_virtual_1_link_joint" type="fixed">
+        <origin xyz="0 -${tracer_rail_width/2} ${thickness}" />
+        <parent link="frame_connector_L_1_link" />
+        <child link="virtual_1_link" />
+    </joint>
+
+    <joint name="frame_connector_L_3_link_to_virtual_2_link_joint" type="fixed">
+        <origin xyz="0 -${tracer_rail_width/2} ${thickness}" />
+        <parent link="frame_connector_L_3_link" />
+        <child link="virtual_2_link" />
+    </joint>
+
+    <!--To mount two 800mm brackets numbered 5 and 6-->
+    <joint name="frame_connector_L_5_link_to_virtual_3_link_joint" type="fixed">
+        <origin xyz="${thickness} -${tracer_rail_width/2} ${2 * tube_radius}" rpy="0 0 0" />
+        <parent link="frame_connector_L_5_link" />
+        <child link="virtual_3_link" />
+    </joint>
+
+    <joint name="frame_connector_L_7_link_to_virtual_4_link_joint" type="fixed">
+        <origin xyz="${thickness} -${tracer_rail_width/2} ${2 * tube_radius}" rpy="0 0 0" />
+        <parent link="frame_connector_L_7_link" />
+        <child link="virtual_4_link" />
+    </joint>
+
+    <!--To mount four 500mm brackets numbered 3,4,5 and 6-->
+    <joint name="frame_connector_L_9_link_to_virtual_5_link_joint" type="fixed">
+        <origin xyz="-${(tracer_rail_length - tube_radius)/2/2} 0 ${thickness}" rpy="0 0 0" />
+        <parent link="frame_connector_L_9_link" />
+        <child link="virtual_5_link" />
+    </joint>
+
+    <joint name="frame_connector_L_10_link_to_virtual_6_link_joint" type="fixed">
+        <origin xyz="-${(tracer_rail_length - tube_radius)/2/2} 0 ${thickness}" rpy="0 0 0" />
+        <parent link="frame_connector_L_10_link" />
+        <child link="virtual_6_link" />
+    </joint>
+
+    <joint name="frame_connector_L_11_link_to_virtual_7_link_joint" type="fixed">
+        <origin xyz="-${(tracer_rail_length - tube_radius)/2/2} 0 ${thickness}" rpy="0 0 0" />
+        <parent link="frame_connector_L_11_link" />
+        <child link="virtual_7_link" />
+    </joint>
+
+    <joint name="frame_connector_L_12_link_to_virtual_8_link_joint" type="fixed">
+        <origin xyz="-${(tracer_rail_length - tube_radius)/2/2} 0 ${thickness}" rpy="0 0 0" />
+        <parent link="frame_connector_L_12_link" />
+        <child link="virtual_8_link" />
+    </joint>
+
+    <!--To secure two 400mm brackets numbered 1 and 2-->
+    <joint name="frame_400mm_1_link_to_virtual_9_link_joint" type="fixed">
+        <origin xyz="0.12 -${(tracer_rail_width + 2 * tube_radius)/2} 0" rpy="0 0 0" />
+        <parent link="frame_400mm_1_link" />
+        <child link="virtual_9_link" />
+    </joint>
+
+    <!--To mount two robotic arm named wx250s_left and wx250s_right-->
+    <joint name="frame_500mm_3_link_to_virtual_10_link_joint" type="fixed">
+        <origin xyz="0.324 -${0.07675 - tube_radius} ${2 * tube_radius}" rpy="0 0 0" />
+        <parent link="frame_500mm_3_link" />
+        <child link="virtual_10_link" />
+    </joint>
+
+    <joint name="frame_500mm_6_link_to_virtual_11_link_joint" type="fixed">
+        <origin xyz="0.324 -${0.07675 - tube_radius} ${2 * tube_radius}" rpy="0 0 0" />
+        <parent link="frame_500mm_6_link" />
+        <child link="virtual_11_link" />
+    </joint>
+
+    <!--To mount two demostrators named demostrator_left and demostrator_right-->
+    <joint name="frame_300mm_4_link_to_virtual_12_link_joint" type="fixed">
+        <origin xyz="0 0.168 0" rpy="0 0 0" />
+        <parent link="frame_300mm_4_link" />
+        <child link="virtual_12_link" />
+    </joint>
+
+    <joint name="frame_300mm_5_link_to_virtual_13_link_joint" type="fixed">
+        <origin xyz="0 -0.168 0" rpy="0 0 0" />
+        <parent link="frame_300mm_5_link" />
+        <child link="virtual_13_link" />
+    </joint>
+
+    <!--To mount realsense_d435 named d435_middle-->
+    <joint name="frame_300mm_1_link_to_virtual_14_link_joint" type="fixed">
+        <origin xyz="${2 * tube_radius} 0 0.2" rpy="0 0 0" />
+        <parent link="frame_300mm_1_link" />
+        <child link="virtual_14_link" />
+    </joint>
+
+</robot>

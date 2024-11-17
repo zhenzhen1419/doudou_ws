@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<robot name="realsense_d435" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="d435_bottom_screw_frame_link" params="prefix">
+
+        <link name="${prefix}/d435_bottom_screw_frame_link" />
+
+        <joint name="${prefix}/d435_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <parent link="${prefix}/d435_base_link"/>
+            <child link="${prefix}/d435_bottom_screw_frame_link" />
+        </joint>
+         
+    </xacro:macro>
+
+</robot>

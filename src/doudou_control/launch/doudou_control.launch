@@ -1,0 +1,44 @@
+<launch>
+
+    <rosparam file="$(find doudou_control)/config/doudou_control.yaml" command="load" />
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/doudou" args="tracer_state_controller
+                                             tracer_motor_l_controller
+                                             tracer_motor_r_controller
+                                             wx250s_left_waist_controller
+                                             wx250s_left_shoulder_controller
+                                             wx250s_left_elbow_controller
+                                             wx250s_left_forearm_roll_controller
+                                             wx250s_left_wrist_angle_controller
+                                             wx250s_left_wrist_rotate_controller
+                                             wx250s_left_left_finger_controller
+                                             wx250s_left_right_finger_controller
+                                             wx250s_right_waist_controller
+                                             wx250s_right_shoulder_controller
+                                             wx250s_right_elbow_controller
+                                             wx250s_right_forearm_roll_controller
+                                             wx250s_right_wrist_angle_controller
+                                             wx250s_right_wrist_rotate_controller
+                                             wx250s_right_left_finger_controller
+                                             wx250s_right_right_finger_controller
+                                             demostrator_left_waist_controller
+                                             demostrator_left_shoulder_controller
+                                             demostrator_left_elbow_controller
+                                             demostrator_left_forearm_roll_controller
+                                             demostrator_left_wrist_angle_controller
+                                             demostrator_left_wrist_rotate_controller
+                                             demostrator_left_left_finger_controller
+                                             demostrator_left_right_finger_controller
+                                             demostrator_right_waist_controller
+                                             demostrator_right_shoulder_controller
+                                             demostrator_right_elbow_controller
+                                             demostrator_right_forearm_roll_controller
+                                             demostrator_right_wrist_angle_controller
+                                             demostrator_right_wrist_rotate_controller
+                                             demostrator_right_left_finger_controller
+                                             demostrator_right_right_finger_controller" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+    
+</launch>

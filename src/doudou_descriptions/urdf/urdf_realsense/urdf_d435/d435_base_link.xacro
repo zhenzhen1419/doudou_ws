@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<robot name="realsense_d435" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="d435_base_link" params="prefix">
+
+        <link name="${prefix}/d435_base_link" />
+
+    </xacro:macro>
+
+</robot>

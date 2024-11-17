@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<robot name="wx250s" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="arm_dummy" params="arm_prefix">
+
+        <link name="${arm_prefix}/dummy_link" />
+
+    </xacro:macro>
+
+</robot>

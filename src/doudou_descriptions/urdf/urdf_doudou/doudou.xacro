@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<robot name="doudou" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name="tracer_rail_length" value="0.40" />
+    <xacro:property name="tracer_rail_width"  value="0.23" />
+    <xacro:property name="tube_radius"        value="0.02" />
+    <xacro:property name="thickness"          value="0.006" />
+
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_tracer/tracer.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/wx250s_left.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/wx250s_right.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/demostrator_left.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_wx250s/demostrator_right.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_frame/frame.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/urdf_virtual/virtual.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_realsense/d435_left.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_realsense/d435_right.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_realsense/d435_middle.xacro" />
+    <xacro:include filename="$(find doudou_description)/urdf/urdf_doudou/doudou.gazebo" />
+
+    <!--To mount two robotic arm named wx250s_left and wx250s_right-->
+    <joint name="base_1_joint" type="fixed">
+        <parent link="virtual_10_link" />
+        <child link="wx250s_left/dummy_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="base_2_joint" type="fixed">
+        <parent link="virtual_11_link" />
+        <child link="wx250s_right/dummy_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!--To mount two demostrators named demostrator_left and demostrator_right-->
+    <joint name="base_3_joint" type="fixed">
+        <parent link="virtual_12_link" />
+        <child link="demostrator_left/dummy_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="base_4_joint" type="fixed">
+        <parent link="virtual_13_link" />
+        <child link="demostrator_right/dummy_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!--To mount realsense_d435 named d435_left d435_right and d435_middle-->
+    <joint name="base_5_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="wx250s_left/ar_tag_link" />
+        <child link="left/d435_base_link" />
+    </joint>
+
+    <joint name="base_6_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="wx250s_right/ar_tag_link" />
+        <child link="right/d435_base_link" />
+    </joint>
+
+    <joint name="base_7_joint" type="fixed">
+        <origin xyz="0.0125 0 0" rpy="0 0 0" />
+        <parent link="virtual_14_link" />
+        <child link="middle/d435_base_link" />
+    </joint>
+
+</robot>

@@ -1,0 +1,197 @@
+doudou:
+  # ---------------------- tracer config -----------------------
+  # Publish all joint states -----------------------------------
+  tracer_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Joint velocity controllers ---------------------------------
+  tracer_motor_l_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: tracer/left_wheel
+    pid:
+      p: 5.0
+      i: 20.0
+      i_clamp: 100.0
+
+  tracer_motor_r_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: tracer/right_wheel
+    pid:
+      p: 5.0
+      i: 20.0
+      i_clamp: 100.0
+
+  #/gazebo_ros_control/pid_gains:
+  #right_wheel: {p: 1.0, i: 0, d: 0.01}
+  #left_wheel: {p: 1.0, i: 0, d: 0.01}
+
+  # ---------------------- wx250s_left config -----------------------
+  # Publish all joint states
+  # Creates the /joint_states topic necessary in ROS
+  #joint_state_controller:
+  #  type: joint_state_controller/JointStateController
+  #  publish_rate: 50
+
+  wx250s_left_waist_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/waist_joint
+    pid: {p: 100, i: 0.0, d: 0.0}
+
+  wx250s_left_shoulder_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/arm_shoulder_joint
+    pid: {p: 500, i: 0.0, d: 0.0}
+
+  wx250s_left_elbow_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/elbow_joint
+    pid: {p: 300.0, i: 0.0, d: 0.0}
+
+  wx250s_left_forearm_roll_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/forearm_roll_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  wx250s_left_wrist_angle_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/wrist_angle_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  wx250s_left_wrist_rotate_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/wrist_rotate_joint
+    pid: {p: 30.0, i: 0.0, d: 0.0}
+
+  wx250s_left_left_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/left_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  wx250s_left_right_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_left/right_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  # ---------------------- wx250s_right config -----------------------
+  wx250s_right_waist_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/waist_joint
+    pid: {p: 100, i: 0.0, d: 0.0}
+
+  wx250s_right_shoulder_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/arm_shoulder_joint
+    pid: {p: 500, i: 0.0, d: 0.0}
+
+  wx250s_right_elbow_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/elbow_joint
+    pid: {p: 300.0, i: 0.0, d: 0.0}
+
+  wx250s_right_forearm_roll_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/forearm_roll_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  wx250s_right_wrist_angle_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/wrist_angle_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  wx250s_right_wrist_rotate_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/wrist_rotate_joint
+    pid: {p: 30.0, i: 0.0, d: 0.0}
+
+  wx250s_right_left_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/left_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  wx250s_right_right_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: wx250s_right/right_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  # ---------------------- demostrator_left config -----------------------
+  demostrator_left_waist_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/waist_joint
+    pid: {p: 100, i: 0.0, d: 0.0}
+
+  demostrator_left_shoulder_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/arm_shoulder_joint
+    pid: {p: 500, i: 0.0, d: 0.0}
+
+  demostrator_left_elbow_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/elbow_joint
+    pid: {p: 300.0, i: 0.0, d: 0.0}
+
+  demostrator_left_forearm_roll_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/forearm_roll_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  demostrator_left_wrist_angle_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/wrist_angle_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  demostrator_left_wrist_rotate_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/wrist_rotate_joint
+    pid: {p: 30.0, i: 0.0, d: 0.0}
+
+  demostrator_left_left_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/left_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  demostrator_left_right_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_left/right_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  # ---------------------- demostrator_right config -----------------------
+  demostrator_right_waist_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/waist_joint
+    pid: {p: 100, i: 0.0, d: 0.0}
+
+  demostrator_right_shoulder_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/arm_shoulder_joint
+    pid: {p: 500, i: 0.0, d: 0.0}
+
+  demostrator_right_elbow_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/elbow_joint
+    pid: {p: 300.0, i: 0.0, d: 0.0}
+
+  demostrator_right_forearm_roll_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/forearm_roll_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  demostrator_right_wrist_angle_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/wrist_angle_joint
+    pid: {p: 50.0, i: 0.0, d: 0.0}
+
+  demostrator_right_wrist_rotate_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/wrist_rotate_joint
+    pid: {p: 30.0, i: 0.0, d: 0.0}
+
+  demostrator_right_left_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/left_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}
+
+  demostrator_right_right_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: demostrator_right/right_finger_joint
+    pid: {p: 50, i: 0.0, d: 5.0}

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot name="arm_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="arm_base" params="arm_prefix">
+
+        <link name="${arm_prefix}/base_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/wx250s_meshes/wx250s_1_base.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="interbotix_black"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
+                <geometry>
+                    <mesh filename="package://doudou_description/meshes/wx250s_meshes/wx250s_1_base.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="-0.0380446000 0.0006138920 0.0193354000" rpy="0 0 ${pi/2}" />
+                <mass value="0.538736" />
+                <inertia ixx="0.0021150000" iyy="0.0006921000" izz="0.0025240000" ixy="-0.0000163500" ixz="0.0000006998" iyz="0.0000464200" />
+            </inertial>
+        </link>
+        
+        <joint name="${arm_prefix}/dummy_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <parent link="${arm_prefix}/dummy_link"/>
+            <child link="${arm_prefix}/base_link"/>
+        </joint>
+
+    </xacro:macro>
+
+</robot>
